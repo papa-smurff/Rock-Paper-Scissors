@@ -8,10 +8,7 @@
     transition: .3s;
 }
 
-body {
-    background-color: #343a40;
-}
-
+body { background-color: #343a40; }
 .container {
     width: 60%;
     height: 100vh;
@@ -112,13 +109,8 @@ h1 {
     border: 1px solid rgba(0, 0, 0, 0.167);
 }
 
-.options li i.fa-regular {
-    opacity: 0;
-}
-
-.options li:hover i.fa-regular {
-    opacity: 1;
-}
+.options li i.fa-regular { opacity: 0; }
+.options li:hover i.fa-regular { opacity: 1; }
 
 .btn_confirm {
     height: fit-content;
@@ -127,7 +119,6 @@ h1 {
     border-radius: 5px;
     background-color: #fff;
 }
-
 .btn_confirm:hover {
     color: #fff;
     background-color: #000;
@@ -145,7 +136,6 @@ h1 {
     background-color: rgba(0, 0, 0, 0.5);
     display: none;
 }
-
 .overplay.showResult {
     display: block;
     padding-top: 150px;
@@ -160,57 +150,29 @@ h1 {
 }
 
 @media (max-width: 900px) {
-    .container {
-        width: 75%;
-    }
-    .game_boxes img {
-        width: 135px;
-    }
+    .container { width: 75%; }
+    .game_boxes img { width: 135px; }
 }
-
 @media (max-width: 760px) {
-    .container {
-        width: 85%;
-    }
-    .game_boxes img {
-        width: 120px;
-    }
+    .container { width: 85%; }
+    .game_boxes img { width: 120px; }
 }
-
 @media (max-width: 630px) {
-    .container {
-        width: 95%;
-    }
-    .game_boxes img {
-        width: 105px;
-    }
+    .container { width: 95%; }
+    .game_boxes img { width: 105px; }
 }
-
 @media (max-width: 580px) {
-    .container {
-        width: 90%;
-    }
-    .game_boxes img {
-        width: 120px;
-    }
+    .container { width: 90%; }
+    .game_boxes img { width: 120px; }
     .dropdown_wrapper {
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
-    .btn_confirm {
-        width: fit-content;
-    }
-    .textBox,
-    .options li {
-        padding: 0 10px;
-    }
-    .dropdown::before {
-        right: 12px;
-    }
-    .options li i.fa-regular {
-        opacity: 1;
-    }
+    .btn_confirm { width: fit-content; }
+    .textBox, .options li { padding: 0 10px; }
+    .dropdown::before { right: 12px; }
+    .options li i.fa-regular { opacity: 1; }
     .dropdown.active .options li {
         display: flex;
         flex-direction: column;
@@ -218,12 +180,7 @@ h1 {
         padding: 5px 0;
     }
 }
-
 @media (max-width: 425px) {
-    .textBox {
-        padding: 0 0 0 5px;
-    }
-    .dropdown::before {
-        left: 80%;
-    }
+    .textBox { padding: 0 0 0 5px; }
+    .dropdown::before { left: 80%; }
 }
