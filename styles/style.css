@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: 'Heebo', sans-serif;
+    transition: .3s;
+}
+
+body {
+    background-color: #343a40;
+}
+
+.container {
+    width: 60%;
+    height: 100vh;
+    margin: auto;
+    text-align: center;
+    overflow: hidden;
+}
+
+img {
+    width: 150px;
+}
+
+h1 {
+    color: #fff;
+    margin: 35px 0;
+}
+
+.game_boxes {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.game_boxes img {
+    margin: 0;
+    border-radius: 15px;
+}
+
+.game_boxes h3 {
+    margin: 0;
+    border-radius: 10px;
+    color: #fff;
+    background-color: #000;
+}
+
+.dropdown_wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+}
+
+.dropdown {
+    position: relative;
+    width: 20%;
+}
+
+.dropdown::before {
+    content: '';
+    position: absolute;
+    top: 12px;
+    right: 7%;
+    width: 8px;
+    height: 8px;
+    cursor: pointer;
+    border-right: 2px solid rgba(0, 0, 0, 0.4);
+    border-top: 2px solid rgba(0, 0, 0, 0.4);
+    transform: rotate(-45deg);
+    transition: .3s;
+}
+
+.dropdown.active::before {
+    top: 10px;
+    transform: rotate(-225deg);
+    transition: .3s;
+}
+
+.textBox {
+    width: 100%;
+    height: 30px;
+    font-size: 15px;
+    padding: 0 15px;
+    border: none;
+    outline: none;
+    background-color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 9;
+}
+
+.options {
+    height: 30px;
+    margin: auto;
+    display: none;
+}
+
+.dropdown.active .options {
+    display: block;
+}
+
+.options li {
+    position: absolute;
+    top: 5px;
+    font-size: 15px;
+    padding: 3px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: -1;
+}
+
+.dropdown.active .options li {
+    position: relative;
+    top: 0;
+    left: 0;
+    text-align: start;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.167);
+    z-index: 1;
+}
+
+.options li i.fa-regular {
+    opacity: 0;
+}
+
+.options li:hover i.fa-regular {
+    opacity: 1;
+}
+
+.btn_confirm {
+    display: block;
+    height: fit-content;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #fff;
+    border: none;
+}
+
+.btn_confirm:hover {
+    color: #fff;
+    background-color: #000;
+}
+
+.regame {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    line-height: 40px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 10;
+}
+
+.regame.showResult {
+    display: block;
+    padding-top: 150px;
+}
+
+.regame button {
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #fff;
+    border: none;
+}
+
+
+@media (max-width: 900px) {
+    .container {
+        width: 75%;
+    }
+
+    .game_boxes img {
+        width: 135px;
+    }
+}
+
+@media (max-width: 760px) {
+    .container {
+        width: 85%;
+    }
+
+    .game_boxes img {
+        width: 120px;
+    }
+}
+
+@media (max-width: 630px) {
+    .container {
+        width: 95%;
+    }
+
+    .game_boxes img {
+        width: 105px;
+    }
+}
+
+@media (max-width: 580px) {
+    .container {
+        width: 90%;
+    }
+
+    .game_boxes img {
+        width: 120px;
+    }
+
+    .dropdown_wrapper {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .btn_confirm {
+        width: fit-content;
+    }
+
+    .textBox,
+    .options li {
+        padding: 0 10px;
+    }
+
+    .dropdown::before {
+        right: 12px;
+    }
+
+    .options li i.fa-regular {
+        opacity: 1;
+    }
+
+    .dropdown.active .options li {
+        display: flex;
+        flex-direction: column;
+        padding: 5px 0;
+        text-align: center;
+    }
+}
+
+@media (max-width: 425px) {
+    .textBox {
+        padding: 0 0 0 5px;
+    }
+
+    .dropdown::before {
+        left: 80%;
+    }
+}
