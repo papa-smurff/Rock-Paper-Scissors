@@ -46,10 +46,10 @@ function totalAmount(player, random) {
     const rdmScissors = random['name'] === 'scissors'
     if (plrRock && rdmScissors || plrPaper && rdmRock || plrScissors && rdmPaper) {
         playerСount.textContent = ++plrCount
-        if (plrCount >= 3) overplayFunc('Win', `${plrCount}:${rdmCount}`)
+        if (plrCount >= 3) restartFunc('Win', `${plrCount}:${rdmCount}`)
     } else if (rdmRock && plrScissors || rdmPaper && plrRock || rdmScissors && plrPaper) {
         randomCount.textContent = ++rdmCount
-        if (rdmCount >= 3) overplayFunc('Loss', `${plrCount}:${rdmCount}`)
+        if (rdmCount >= 3) restartFunc('Loss', `${plrCount}:${rdmCount}`)
     }
 }
 
@@ -61,17 +61,17 @@ function round() {
     }, 2000)
 }
 
-function overplayFunc(result, total) {
+function restartFunc(result, total) {
     setTimeout(() => {
-        overPlay.classList.toggle('showResult')
-        overPlay.innerHTML = `<h2>${result}</h2><h3>${total}</h3><button>Overplay</button>`
-        document.querySelector('.overplay>button').addEventListener('click', () => {
+        restart.classList.toggle('showResult')
+        restart.innerHTML = `<h2>${result}</h2><h3>${total}</h3><button>Restart</button>`
+        document.querySelector('.restart>button').addEventListener('click', () => {
             textBox.value = null
             textBox.toggleAttribute('data-id')
             playerСount.textContent = plrCount = 0
             randomCount.textContent = rdmCount = 0
             playerСhoiceImg.src = randomSelectionImg.src = './images/mystery-box.png'
-            overPlay.classList.toggle('showResult')
+            restart.classList.toggle('showResult')
         })
     }, 1800)
 }
